@@ -1,0 +1,21 @@
+{
+  "dataset_name": "NewChallenge_3_KCBS_bound",
+  "source_notebook": "new_challenges/NewChallenge_3_KCBS_bound.ipynb",
+  "problems": [
+    {
+      "problem_id": "NewChallenge_3_KCBS_bound_main",
+      "problem_type": "main",
+      "problem_index": null,
+      "problem_description": "\n# Problem setup:\nThe Klyachko-Can-Binicioglu-Shumovsky (KCBS) scenario uses a single spin-1 (qutrit) system and five rank-1 yes/no measurements $\\{\\Pi_i=|v_i\\rangle\\langle v_i|\\}_{i=0}^{4}$ arranged on a pentagram, where cyclically adjacent measurements are exclusive, $\\langle v_i|v_{i+1}\\rangle=0$ (indices mod 5). A noncontextual hidden-variable model obeys $\\sum_{i=0}^{4}\\langle\\Pi_i\\rangle\\le 2$.\n\n# Main problem:\nOver all qutrit quantum states $\\rho$, what is the maximum value of $\\sum_{i=0}^{4}\\mathrm{Tr}(\\rho\\,\\Pi_i)$? Give the exact value.\n",
+      "code_template": "def answer():\n    r\"\"\"Return the maximum quantum value of the KCBS sum (float).\"\"\"\n    # ------------------ FILL IN YOUR RESULTS BELOW ------------------\n    kcbs_max = ...\n    # ---------------------------------------------------------------\n    return kcbs_max\n",
+      "answer_code": "def answer():\n    r\"\"\"Return the maximum quantum value of the KCBS sum (float).\"\"\"\n    # ------------------ FILL IN YOUR RESULTS BELOW ------------------\n    kcbs_max = 5**0.5   # = 2.2360679...   # reference (verified)\n    # ---------------------------------------------------------------\n    return kcbs_max\n",
+      "answer_only_code": "5**0.5   # = 2.2360679...",
+      "testcases": null,
+      "metadata": {
+        "settings": {},
+        "tag": "Quantum Information, Science & Technology",
+        "problem_setup": "The Klyachko-Can-Binicioglu-Shumovsky (KCBS) scenario uses a single spin-1 (qutrit) system and five rank-1 yes/no measurements $\\{\\Pi_i=|v_i\\rangle\\langle v_i|\\}_{i=0}^{4}$ arranged on a pentagram, where cyclically adjacent measurements are exclusive, $\\langle v_i|v_{i+1}\\rangle=0$ (indices mod 5). A noncontextual hidden-variable model obeys $\\sum_{i=0}^{4}\\langle\\Pi_i\\rangle\\le 2$."
+      }
+    }
+  ]
+}

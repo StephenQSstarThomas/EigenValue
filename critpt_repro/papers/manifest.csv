@@ -1,0 +1,29 @@
+key,title,arxiv_id,pdf_url,status,size_bytes
+syk_maldacena_stanford,Remarks on the Sachdev-Ye-Kitaev model,1604.07818,https://arxiv.org/pdf/1604.07818,ok,1193297
+syk_fu_sachdev,Numerical study of fermion and boson models with infinite-range random interactions,1603.05246,https://arxiv.org/pdf/1603.05246,ok,1034373
+qsearch_meyer_wong,Connectivity is a poor indicator of fast quantum search,1409.5876,https://arxiv.org/pdf/1409.5876,ok,515449
+rbc_fixed_flux,Fixed-flux Rayleigh-Benard convection in doubly periodic domains,2312.06030,https://arxiv.org/pdf/2312.06030,ok,33914777
+superres_tsang,Quantum theory of superresolution for two incoherent optical point sources,1511.00552,https://arxiv.org/pdf/1511.00552,ok,1085382
+hhg_dorney,Controlling the polarization and vortex charge of attosecond high-harmonic beams,,,not_on_arxiv,0
+sensing_zang2024,Quantum advantage in distributed sensing with noisy quantum networks,2409.17089,https://arxiv.org/pdf/2409.17089,ok,1556281
+sensing_zhang_zhuang,Distributed quantum sensing,2010.14744,https://arxiv.org/pdf/2010.14744,ok,15836576
+moire_fci_jia,Moire fractional Chern insulators in twisted bilayer MoTe2,2311.04958,https://arxiv.org/pdf/2311.04958,ok,25009367
+pxp_turner_weak,Weak ergodicity breaking from quantum many-body scars,1711.03528,https://arxiv.org/pdf/1711.03528,ok,2584831
+lamet_ji_parton,Parton physics on a Euclidean lattice,1305.1539,https://arxiv.org/pdf/1305.1539,ok,127715
+lamet_review,Large-momentum effective theory,2004.03543,https://arxiv.org/pdf/2004.03543,ok,3203259
+efimov_castin_werner,Single-particle momentum distribution of an Efimov trimer,1103.5157,https://arxiv.org/pdf/1103.5157,ok,306101
+optbind_rieser,Tunable light-induced dipole-dipole interaction between optically levitated nanoparticles,2203.04198,https://arxiv.org/pdf/2203.04198,ok,5848790
+mottness_mai,1/4 is the new 1/2 when topology is intertwined with Mottness,2210.11486,https://arxiv.org/pdf/2210.11486,ok,6247949
+contextuality_klyachko,Simple test for hidden variables in spin-1 systems,0706.0126,https://arxiv.org/pdf/0706.0126,ok,147900
+inverse_chertkov_clark,Computational inverse method for constructing spaces of quantum models from wave functions,1802.01590,https://arxiv.org/pdf/1802.01590,ok,2963315
+tensornet_zhang,Qubit-efficient simulation of thermal states with quantum tensor networks,2205.06299,https://arxiv.org/pdf/2205.06299,ok,1551395
+mixedspt_huang,Coherent information as a mixed-state topological order parameter of fermions,2412.12279,https://arxiv.org/pdf/2412.12279,ok,3148329
+dipole_hydro_jain,Dipole superfluid hydrodynamics,2304.09852,https://arxiv.org/pdf/2304.09852,ok,651204
+dm_transducer_hall,"Advanced LIGO, LISA and Cosmic Explorer as dark matter transducers",2210.17487,https://arxiv.org/pdf/2210.17487,ok,1468155
+vecdm_morisaki,Improved sensitivity of interferometric GW detectors to ultralight vector dark matter,2011.03589,https://arxiv.org/pdf/2011.03589,ok,1393394
+kitaev_finite_zschocke,Physical states and finite-size effects in Kitaev's honeycomb model,1502.03063,https://arxiv.org/pdf/1502.03063,ok,846294
+kitaev_2006,Anyons in an exactly solved model and beyond,cond-mat/0506438,https://arxiv.org/pdf/cond-mat/0506438,ok,1533535
+hk_scattering_ma,Charge Susceptibility and Kubo Response in Hatsugai-Kohmoto-related Models,2409.07522,https://arxiv.org/pdf/2409.07522,ok,1156337
+quantumgeom_yu,Quantum Geometry in Quantum Materials,2501.00098,https://arxiv.org/pdf/2501.00098,ok,3615064
+oat_ma_review,Quantum spin squeezing,1011.2978,https://arxiv.org/pdf/1011.2978,ok,5861881
+levitated_hoang,Torsional optomechanics of a levitated nonspherical nanoparticle,1605.03990,https://arxiv.org/pdf/1605.03990,ok,1083518

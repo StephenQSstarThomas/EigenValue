@@ -1,0 +1,35 @@
+{
+  "dataset_name": "NewChallenge_6_OneAxisTwisting_squeezing",
+  "source_notebook": "new_challenges/NewChallenge_6_OneAxisTwisting_squeezing.ipynb",
+  "problems": [
+    {
+      "problem_id": "NewChallenge_6_OneAxisTwisting_squeezing_main",
+      "problem_type": "main",
+      "problem_index": null,
+      "problem_description": "\n# Problem setup:\nAn ensemble of $N$ two-level atoms (collective spin $J=N/2$) is prepared in a coherent spin state polarized along $+x$ and evolves under the one-axis-twisting (OAT) Hamiltonian $H=\\chi J_z^2$. Spin squeezing is quantified by the Wineland parameter $\\xi^2=N\\,(\\Delta J_{\\perp,\\min})^2/|\\langle\\vec J\\rangle|^2$, where the minimum is over directions perpendicular to the mean spin; $\\xi^2<1$ signals metrologically useful squeezing beating the standard quantum limit.\n\n# Main problem:\nFor $N=100$ atoms, compute the minimum achievable Wineland squeezing parameter $\\xi^2_{\\min}$ over the twisting time, to two significant figures.\n",
+      "code_template": "import numpy as np\n\ndef answer():\n    r\"\"\"Return xi^2_min for N=100 one-axis-twisting (float).\"\"\"\n    # ------------------ FILL IN YOUR RESULTS BELOW ------------------\n    xi2_min = ...\n    # ---------------------------------------------------------------\n    return xi2_min\n",
+      "answer_code": "import numpy as np\n\ndef answer():\n    r\"\"\"Return xi^2_min for N=100 one-axis-twisting (float).\"\"\"\n    # ------------------ FILL IN YOUR RESULTS BELOW ------------------\n    xi2_min = 0.063   # = -12.0 dB ; scales as N^(-2/3)   # reference (verified)\n    # ---------------------------------------------------------------\n    return xi2_min\n",
+      "answer_only_code": "0.063   # = -12.0 dB ; scales as N^(-2/3)",
+      "testcases": null,
+      "metadata": {
+        "settings": {},
+        "tag": "Atomic, Molecular & Optical Physics",
+        "problem_setup": "An ensemble of $N$ two-level atoms (collective spin $J=N/2$) is prepared in a coherent spin state polarized along $+x$ and evolves under the one-axis-twisting (OAT) Hamiltonian $H=\\chi J_z^2$. Spin squeezing is quantified by the Wineland parameter $\\xi^2=N\\,(\\Delta J_{\\perp,\\min})^2/|\\langle\\vec J\\rangle|^2$, where the minimum is over directions perpendicular to the mean spin; $\\xi^2<1$ signals metrologically useful squeezing beating the standard quantum limit."
+      }
+    },
+    {
+      "problem_id": "NewChallenge_6_OneAxisTwisting_squeezing_N50",
+      "problem_type": "checkpoint",
+      "problem_index": 0,
+      "problem_description": "\n# Checkpoint: repeat for N=50 atoms.\n",
+      "code_template": "def answer_N50():\n    xi2_min = ...\n    return xi2_min\n",
+      "answer_code": "def answer_N50():\n    xi2_min = 0.104\n    return xi2_min\n",
+      "answer_only_code": "0.104",
+      "testcases": null,
+      "metadata": {
+        "settings": {},
+        "tag": "Atomic, Molecular & Optical Physics"
+      }
+    }
+  ]
+}

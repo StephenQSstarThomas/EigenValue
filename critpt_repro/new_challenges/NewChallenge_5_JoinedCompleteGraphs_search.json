@@ -1,0 +1,35 @@
+{
+  "dataset_name": "NewChallenge_5_JoinedCompleteGraphs_search",
+  "source_notebook": "new_challenges/NewChallenge_5_JoinedCompleteGraphs_search.ipynb",
+  "problems": [
+    {
+      "problem_id": "NewChallenge_5_JoinedCompleteGraphs_search_main",
+      "problem_type": "main",
+      "problem_index": null,
+      "problem_description": "\n# Problem setup:\nContinuous-time quantum-walk spatial search with $H=-\\gamma A-|a\\rangle\\langle a|$ on the 'joined complete graphs': two complete graphs $K_n$ (so $N=2n$ vertices total) connected by a SINGLE bridge edge between one vertex of each clique. The marked vertex $|a\\rangle$ lies in one clique, NOT at the bridge. The initial state is the uniform superposition $|s\\rangle$.\n\n# Main problem:\nIn the large-$N$ limit, with $\\gamma$ tuned optimally, give the leading-order optimal evolution time $T$ (as a formula in $n$) and the success probability $P$ at the marked vertex.\n",
+      "code_template": "def answer():\n    r\"\"\"Return (T_formula_str, P) for optimal joined-complete-graphs search.\"\"\"\n    # ------------------ FILL IN YOUR RESULTS BELOW ------------------\n    T = ...   # e.g. 'pi*sqrt(n)/2'\n    P = ...\n    # ---------------------------------------------------------------\n    return T, P\n",
+      "answer_code": "def answer():\n    r\"\"\"Return (T_formula_str, P) for optimal joined-complete-graphs search.\"\"\"\n    # ------------------ FILL IN YOUR RESULTS BELOW ------------------\n    T = ('pi*sqrt(n)/2', 0.5)   # reference (verified)   # e.g. 'pi*sqrt(n)/2'\n    P = ('pi*sqrt(n)/2', 0.5)   # reference (verified)\n    # ---------------------------------------------------------------\n    return T, P\n",
+      "answer_only_code": "('pi*sqrt(n)/2', 0.5)",
+      "testcases": null,
+      "metadata": {
+        "settings": {},
+        "tag": "Quantum Information, Science & Technology",
+        "problem_setup": "Continuous-time quantum-walk spatial search with $H=-\\gamma A-|a\\rangle\\langle a|$ on the 'joined complete graphs': two complete graphs $K_n$ (so $N=2n$ vertices total) connected by a SINGLE bridge edge between one vertex of each clique. The marked vertex $|a\\rangle$ lies in one clique, NOT at the bridge. The initial state is the uniform superposition $|s\\rangle$."
+      }
+    },
+    {
+      "problem_id": "NewChallenge_5_JoinedCompleteGraphs_search_grover_anchor",
+      "problem_type": "checkpoint",
+      "problem_index": 0,
+      "problem_description": "\n# Checkpoint (anchor): the SAME search on a single complete graph $K_N$ (Grover's problem). Give optimal T (formula in N) and success probability P.\n",
+      "code_template": "def answer_grover():\n    T, P = ...\n    return T, P\n",
+      "answer_code": "def answer_grover():\n    T, P = ('(pi/2)*sqrt(N)', 1.0)\n    return T, P\n",
+      "answer_only_code": "('(pi/2)*sqrt(N)', 1.0)",
+      "testcases": null,
+      "metadata": {
+        "settings": {},
+        "tag": "Quantum Information, Science & Technology"
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+# Downloaded source papers — large binaries, re-fetchable from papers/manifest.csv
+critpt_repro/papers/*.pdf
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+*.swp

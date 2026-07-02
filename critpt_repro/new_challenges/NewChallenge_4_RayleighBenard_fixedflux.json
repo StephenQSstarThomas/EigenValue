@@ -1,0 +1,35 @@
+{
+  "dataset_name": "NewChallenge_4_RayleighBenard_fixedflux",
+  "source_notebook": "new_challenges/NewChallenge_4_RayleighBenard_fixedflux.ipynb",
+  "problems": [
+    {
+      "problem_id": "NewChallenge_4_RayleighBenard_fixedflux_main",
+      "problem_type": "main",
+      "problem_index": null,
+      "problem_description": "\n# Problem setup:\nRayleigh-Benard convection between two horizontal plates, Boussinesq, horizontally periodic. BOTH walls are no-slip (rigid) and BOTH impose a fixed heat flux (Neumann condition on the temperature perturbation, $\\partial_z\\theta=0$ at each wall). Consider the onset of convection (marginal linear stability, exchange of stabilities).\n\n# Main problem:\nFind the critical Rayleigh number (to $\\pm1$) and the associated critical horizontal wavenumber above which the conduction state is linearly unstable.\n",
+      "code_template": "def answer():\n    r\"\"\"Return (Ra_c, k_c) for rigid-rigid, fixed-flux/fixed-flux RBC.\"\"\"\n    # ------------------ FILL IN YOUR RESULTS BELOW ------------------\n    Ra_c = ...\n    k_c  = ...\n    # ---------------------------------------------------------------\n    return Ra_c, k_c\n",
+      "answer_code": "def answer():\n    r\"\"\"Return (Ra_c, k_c) for rigid-rigid, fixed-flux/fixed-flux RBC.\"\"\"\n    # ------------------ FILL IN YOUR RESULTS BELOW ------------------\n    Ra_c = (720.0, 0.0)   # reference (verified)\n    k_c  = (720.0, 0.0)   # reference (verified)\n    # ---------------------------------------------------------------\n    return Ra_c, k_c\n",
+      "answer_only_code": "(720.0, 0.0)",
+      "testcases": null,
+      "metadata": {
+        "settings": {},
+        "tag": "Fluid Dynamics",
+        "problem_setup": "Rayleigh-Benard convection between two horizontal plates, Boussinesq, horizontally periodic. BOTH walls are no-slip (rigid) and BOTH impose a fixed heat flux (Neumann condition on the temperature perturbation, $\\partial_z\\theta=0$ at each wall). Consider the onset of convection (marginal linear stability, exchange of stabilities)."
+      }
+    },
+    {
+      "problem_id": "NewChallenge_4_RayleighBenard_fixedflux_mixed_thermal",
+      "problem_type": "checkpoint",
+      "problem_index": 0,
+      "problem_description": "\n# Checkpoint: BOTH walls no-slip, but bottom fixed-temperature and top fixed-flux. Find (Ra_c, k_c).\n",
+      "code_template": "def answer_mixed():\n    Ra_c, k_c = ...\n    return Ra_c, k_c\n",
+      "answer_code": "def answer_mixed():\n    Ra_c, k_c = (1295.78, 2.552)\n    return Ra_c, k_c\n",
+      "answer_only_code": "(1295.78, 2.552)",
+      "testcases": null,
+      "metadata": {
+        "settings": {},
+        "tag": "Fluid Dynamics"
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "dataset_name": "NewChallenge_2_Efimov_scaling",
+  "source_notebook": "new_challenges/NewChallenge_2_Efimov_scaling.ipynb",
+  "problems": [
+    {
+      "problem_id": "NewChallenge_2_Efimov_scaling_main",
+      "problem_type": "main",
+      "problem_index": null,
+      "problem_description": "\n# Problem setup:\nThree identical bosons interact via a zero-range (contact) potential tuned to the unitary limit (infinite two-body $s$-wave scattering length, $a\\to\\infty$). In hyperspherical coordinates the attractive channel produces the Efimov effect: an infinite geometric tower of three-body bound states. The hyperangular eigenvalue for the lowest channel is $s^2=-s_0^2$ with $s_0$ real, determined by the transcendental equation $-s\\cos(\\pi s/2)+\\tfrac{8}{\\sqrt3}\\sin(\\pi s/6)=0$ evaluated on the imaginary axis $s=is_0$.\n\n# Main problem:\nCompute the discrete (geometric) scaling factor $\\lambda=e^{\\pi/s_0}$ relating consecutive Efimov trimers (so that successive binding energies satisfy $E_n/E_{n+1}=\\lambda^2$). Report $\\lambda$ to four significant figures.\n",
+      "code_template": "import mpmath as mp\n\ndef answer():\n    r\"\"\"Return the Efimov discrete scaling factor lambda = exp(pi/s0) (float).\"\"\"\n    # ------------------ FILL IN YOUR RESULTS BELOW ------------------\n    scaling = ...\n    # ---------------------------------------------------------------\n    return scaling\n",
+      "answer_code": "import mpmath as mp\n\ndef answer():\n    r\"\"\"Return the Efimov discrete scaling factor lambda = exp(pi/s0) (float).\"\"\"\n    # ------------------ FILL IN YOUR RESULTS BELOW ------------------\n    scaling = 22.6944   # reference (verified)\n    # ---------------------------------------------------------------\n    return scaling\n",
+      "answer_only_code": "22.6944",
+      "testcases": null,
+      "metadata": {
+        "settings": {},
+        "tag": "Atomic, Molecular & Optical Physics",
+        "problem_setup": "Three identical bosons interact via a zero-range (contact) potential tuned to the unitary limit (infinite two-body $s$-wave scattering length, $a\\to\\infty$). In hyperspherical coordinates the attractive channel produces the Efimov effect: an infinite geometric tower of three-body bound states. The hyperangular eigenvalue for the lowest channel is $s^2=-s_0^2$ with $s_0$ real, determined by the transcendental equation $-s\\cos(\\pi s/2)+\\tfrac{8}{\\sqrt3}\\sin(\\pi s/6)=0$ evaluated on the imaginary axis $s=is_0$."
+      }
+    },
+    {
+      "problem_id": "NewChallenge_2_Efimov_scaling_s0",
+      "problem_type": "checkpoint",
+      "problem_index": 0,
+      "problem_description": "\n# Checkpoint: report s0 itself (the imaginary hyperangular exponent) to 5 dp.\n",
+      "code_template": "def answer_s0():\n    s0 = ...\n    return s0\n",
+      "answer_code": "def answer_s0():\n    s0 = 1.00624\n    return s0\n",
+      "answer_only_code": "1.00624",
+      "testcases": null,
+      "metadata": {
+        "settings": {},
+        "tag": "Atomic, Molecular & Optical Physics"
+      }
+    }
+  ]
+}

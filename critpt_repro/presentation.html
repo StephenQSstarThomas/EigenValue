@@ -1,0 +1,252 @@
+<title>CritPt — Reproductions & New Challenges</title>
+<style>
+  :root{
+    --ink:#0c111c; --ink2:#0f1626; --panel:#131c2e; --panel2:#172236;
+    --line:#25324c; --line2:#31425f;
+    --text:#dde5f2; --mute:#8b9ab6; --dim:#66748f;
+    --teal:#4fd6d0; --teal-dim:#2f9d9c;
+    --amber:#f2b65a; --amber-soft:#f7cd87;
+    --violet:#a58cf0;
+    --good:#63d29a;
+    --mono:ui-monospace,"SF Mono","JetBrains Mono","Cascadia Code",Menlo,Consolas,monospace;
+    --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --wrap:1080px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:
+      radial-gradient(900px 500px at 82% -8%, rgba(79,214,208,.10), transparent 60%),
+      radial-gradient(760px 460px at 5% 4%, rgba(165,140,240,.08), transparent 55%),
+      var(--ink);
+    color:var(--text);font-family:var(--sans);line-height:1.6;
+    -webkit-font-smoothing:antialiased;font-feature-settings:"cv02","ss01";
+  }
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  a{color:var(--teal);text-decoration:none}
+  a:hover{text-decoration:underline}
+  h1,h2,h3{text-wrap:balance;margin:0}
+  .mono{font-family:var(--mono)}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---------- hero ---------- */
+  header{padding:64px 0 30px;border-bottom:1px solid var(--line)}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:20px}
+  .eyebrow .dot{color:var(--amber)}
+  h1{font-size:clamp(30px,5vw,52px);font-weight:800;letter-spacing:-.02em;line-height:1.04}
+  h1 .g{background:linear-gradient(92deg,var(--teal),var(--amber-soft));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{color:var(--mute);font-size:clamp(15px,1.9vw,18px);max-width:64ch;margin-top:18px}
+  .lede b{color:var(--text);font-weight:600}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+  .stat{background:linear-gradient(180deg,var(--panel),var(--ink2));border:1px solid var(--line);border-radius:12px;padding:16px 16px 14px}
+  .stat .n{font-family:var(--mono);font-size:26px;font-weight:700;color:var(--amber);letter-spacing:-.01em}
+  .stat .k{font-size:12.5px;color:var(--mute);margin-top:3px;letter-spacing:.02em}
+  @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+  /* ---------- section headers ---------- */
+  .sec{padding:52px 0 8px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+  .sec-head .idx{font-family:var(--mono);font-size:13px;color:var(--teal);letter-spacing:.15em}
+  .sec-head h2{font-size:clamp(21px,3vw,27px);font-weight:750;letter-spacing:-.01em}
+  .sec-sub{color:var(--mute);font-size:14.5px;max-width:70ch;margin:0 0 26px}
+
+  /* ---------- reproduction cards ---------- */
+  .repro{display:flex;flex-direction:column;gap:16px}
+  .rcard{background:linear-gradient(180deg,var(--panel),var(--ink2));border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .rcard .top{display:grid;grid-template-columns:1.55fr 1fr;gap:0}
+  @media(max-width:720px){.rcard .top{grid-template-columns:1fr}}
+  .rcard .body{padding:22px 24px}
+  .rtag{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:11px}
+  .cid{font-family:var(--mono);font-size:12px;color:var(--ink);background:var(--teal);border-radius:6px;padding:2px 8px;font-weight:700;letter-spacing:.02em}
+  .field{font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--mute)}
+  .rcard h3{font-size:19px;font-weight:700;letter-spacing:-.01em;margin-bottom:9px}
+  .rcard p{margin:0 0 12px;font-size:14.5px;color:#c3cde0}
+  .rcard p .k{color:var(--text);font-weight:600}
+  .method{font-size:13.5px;color:var(--mute)}
+  .method .lab{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-dim);display:block;margin-bottom:3px}
+
+  .readout{background:
+      linear-gradient(180deg,rgba(242,182,90,.06),rgba(242,182,90,.02)),var(--ink);
+    border-left:1px solid var(--line);padding:22px 24px;display:flex;flex-direction:column;justify-content:center;gap:6px}
+  @media(max-width:720px){.readout{border-left:none;border-top:1px solid var(--line)}}
+  .readout .lab{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+  .readout .val{font-family:var(--mono);font-size:clamp(20px,3.4vw,27px);font-weight:700;color:var(--amber-soft);letter-spacing:-.01em;line-height:1.25}
+  .readout .val small{color:var(--amber);font-size:.62em;font-weight:600}
+  .chkline{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--mute);margin-top:6px;padding-top:12px;border-top:1px dashed var(--line2)}
+  .chk{color:var(--good);font-weight:700}
+  .paper{font-family:var(--mono);font-size:12px;color:var(--dim)}
+
+  /* ---------- new challenge grid ---------- */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .qcard{background:linear-gradient(180deg,var(--panel),var(--ink2));border:1px solid var(--line);border-radius:14px;padding:20px 20px 18px;display:flex;flex-direction:column;transition:border-color .18s ease,transform .18s ease}
+  .qcard:hover{border-color:var(--line2);transform:translateY(-2px)}
+  .qtop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+  .nid{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--violet);letter-spacing:.04em}
+  .chip{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);border:1px solid var(--line2);border-radius:20px;padding:3px 10px;white-space:nowrap}
+  .qcard h3{font-size:16.5px;font-weight:700;letter-spacing:-.005em;margin-bottom:9px;line-height:1.25}
+  .qcard .setup{font-size:13.3px;color:var(--mute);margin:0 0 12px}
+  .qcard .ask{font-size:13.6px;color:#cdd6e8;margin:0 0 14px}
+  .qcard .ask .q{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-dim);display:block;margin-bottom:3px}
+  .ans{margin-top:auto;background:var(--ink);border:1px solid var(--line);border-radius:10px;padding:11px 13px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .ans .lab{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+  .ans .v{font-family:var(--mono);font-size:15.5px;font-weight:700;color:var(--amber-soft);text-align:right}
+  .qfoot{display:flex;align-items:center;gap:8px;margin-top:11px;font-family:var(--mono);font-size:11px;color:var(--dim)}
+  .verified{display:inline-flex;align-items:center;gap:5px;color:var(--good);font-weight:700}
+  .verified::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--good);box-shadow:0 0 8px var(--good)}
+
+  code{font-family:var(--mono);font-size:.92em;color:var(--teal);background:rgba(79,214,208,.09);border-radius:4px;padding:1px 5px}
+  .kbd{color:var(--amber-soft)}
+
+  /* ---------- footer ---------- */
+  footer{margin-top:56px;border-top:1px solid var(--line);padding:34px 0 60px;color:var(--mute);font-size:13.5px}
+  footer h3{font-size:15px;color:var(--text);margin-bottom:12px}
+  pre{background:var(--ink2);border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow-x:auto;font-family:var(--mono);font-size:12.5px;color:#c3cde0;line-height:1.7}
+  .note{font-size:12.5px;color:var(--dim);margin-top:18px}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">CritPt frontier-physics benchmark <span class="dot">/</span> reproduction workbench</div>
+  <h1>Reproducing <span class="g">frontier-physics</span> challenges<br>&amp; writing new verifiable ones</h1>
+  <p class="lede">CritPt poses research-level physics tasks with <b>machine-checkable answers</b> — the best LLM scores ~10%. Starting from an analysis of its 70 public challenges, I downloaded the source papers, <b>reproduced three challenges end-to-end</b> from first principles, and authored <b>six new challenges</b> in the same format — every answer computed and verified.</p>
+  <div class="stats">
+    <div class="stat"><div class="n tnum">70</div><div class="k">public challenges analyzed</div></div>
+    <div class="stat"><div class="n tnum">27</div><div class="k">source papers fetched</div></div>
+    <div class="stat"><div class="n tnum">3</div><div class="k">reproduced end-to-end</div></div>
+    <div class="stat"><div class="n tnum">6</div><div class="k">new challenges authored</div></div>
+  </div>
+</header>
+
+<!-- ============ REPRODUCTIONS ============ -->
+<section class="sec">
+  <div class="sec-head"><span class="idx">01</span><h2>Three reproductions</h2></div>
+  <p class="sec-sub">The public set ships every reference answer <b>blanked out</b>, so each result below was derived independently from the physics and cross-checked against known limits.</p>
+
+  <div class="repro">
+
+    <!-- CH 17 -->
+    <div class="rcard"><div class="top">
+      <div class="body">
+        <div class="rtag"><span class="cid">CH-17</span><span class="field">High-energy · Condensed matter</span></div>
+        <h3>SYK zero-temperature entropy</h3>
+        <p>Large-<span class="k">N</span> Majorana Sachdev–Ye–Kitaev model, 4-body random couplings. Compute the residual entropy density <span class="k">S/N</span> to four decimals.</p>
+        <div class="method"><span class="lab">Method</span>Maldacena–Stanford closed form <code>S₀/N = ½ln2 − ∫₀^{1/q} π(½−x)tan(πx)dx</code>, cross-checked by disorder-averaged finite-N exact diagonalization (Jordan–Wigner, N up to 26).</div>
+      </div>
+      <div class="readout">
+        <div class="lab">Result — S/N</div>
+        <div class="val tnum">0.2324</div>
+        <div class="chkline"><span class="chk">✓ validated</span> q=2 → 0 exactly · large-q → ½ln2 · ED: T→∞ hits ½ln2, low-T rises with N</div>
+      </div>
+    </div></div>
+
+    <!-- CH 31 -->
+    <div class="rcard"><div class="top">
+      <div class="body">
+        <div class="rtag"><span class="cid">CH-31</span><span class="field">Fluid dynamics</span></div>
+        <h3>Rayleigh–Bénard onset, mixed boundaries</h3>
+        <p>Bottom wall no-slip + fixed heat flux; top wall free-slip + fixed temperature. Find the critical Rayleigh number and horizontal wavenumber at the onset of convection.</p>
+        <div class="method"><span class="lab">Method</span>Marginal-stability generalized eigenvalue problem via Chebyshev collocation, minimized over wavenumber. Solver first validated against three textbook cases to 4 significant figures.</div>
+      </div>
+      <div class="readout">
+        <div class="lab">Result — Ra<small>c</small> , k<small>c</small></div>
+        <div class="val tnum">816.7 <small>· 2.21</small></div>
+        <div class="chkline"><span class="chk">✓ validated</span> rigid-rigid 1707.76 · free-free 657.5 · rigid-free 1100.65</div>
+      </div>
+    </div></div>
+
+    <!-- CH 61 -->
+    <div class="rcard"><div class="top">
+      <div class="body">
+        <div class="rtag"><span class="cid">CH-61</span><span class="field">Quantum computing</span></div>
+        <h3>Quantum-walk search, simplex of complete graphs</h3>
+        <p>Continuous-time quantum walk searching a 10,100-vertex graph (101 cliques of 100). Find the evolution time <span class="k">T</span> and success probability <span class="k">P</span> at the marked vertex.</p>
+        <div class="method"><span class="lab">Method</span>Exact 7-dimensional symmetry (equitable-partition) reduction — spectrum matches Meyer–Wong's matrix — then the two-stage protocol (γ=2/M then 1/M), gaps 4/M<sup>3/2</sup> and 2/√M reproduced.</div>
+      </div>
+      <div class="readout">
+        <div class="lab">Result — T , P</div>
+        <div class="val tnum">801 <small>· 0.98</small></div>
+        <div class="chkline"><span class="chk">✓ validated</span> two H-constructions agree · stage-2 gap = 0.200 exactly</div>
+      </div>
+    </div></div>
+
+  </div>
+</section>
+
+<!-- ============ NEW CHALLENGES ============ -->
+<section class="sec">
+  <div class="sec-head"><span class="idx">02</span><h2>Six new challenges</h2></div>
+  <p class="sec-sub">Written in the CritPt format — a research setup, a single guess-resistant answer, a code template to fill in — each grounded in a downloaded paper. Every answer was computed &amp; verified this session; each also ships a harder checkpoint.</p>
+
+  <div class="grid">
+
+    <div class="qcard">
+      <div class="qtop"><span class="nid">NC-1</span><span class="chip">High-energy · CMT</span></div>
+      <h3>SYK residual entropy at q = 6</h3>
+      <p class="setup">Majorana SYK with a six-body random interaction, good large-N scaling; residual entropy density from the low-T expansion of log Z.</p>
+      <p class="ask"><span class="q">Main problem</span>Compute S₀/N for q = 6 to four decimals.</p>
+      <div class="ans"><span class="lab">S₀/N</span><span class="v tnum">0.2908</span></div>
+      <div class="qfoot"><span class="verified">verified</span>· arXiv:1604.07818 · checkpoint q=8 → 0.3136</div>
+    </div>
+
+    <div class="qcard">
+      <div class="qtop"><span class="nid">NC-2</span><span class="chip">AMO · Few-body</span></div>
+      <h3>Efimov discrete scaling factor</h3>
+      <p class="setup">Three identical bosons at unitarity; the attractive hyperspherical channel gives the Efimov tower with exponent s = i·s₀ from a transcendental equation.</p>
+      <p class="ask"><span class="q">Main problem</span>Compute the geometric scaling factor λ = e^{π/s₀} (E<sub>n</sub>/E<sub>n+1</sub> = λ²).</p>
+      <div class="ans"><span class="lab">λ</span><span class="v tnum">22.69</span></div>
+      <div class="qfoot"><span class="verified">verified</span>· arXiv:1103.5157 · s₀ = 1.00624</div>
+    </div>
+
+    <div class="qcard">
+      <div class="qtop"><span class="nid">NC-3</span><span class="chip">Quantum foundations</span></div>
+      <h3>KCBS contextuality quantum bound</h3>
+      <p class="setup">A single qutrit and five pentagram projectors with cyclic exclusivity ⟨v<sub>i</sub>|v<sub>i+1</sub>⟩ = 0. Noncontextual models obey Σ⟨Π<sub>i</sub>⟩ ≤ 2.</p>
+      <p class="ask"><span class="q">Main problem</span>Maximum of Σ<sub>i</sub> Tr(ρ Π<sub>i</sub>) over all qutrit states.</p>
+      <div class="ans"><span class="lab">max</span><span class="v tnum">√5 = 2.2361</span></div>
+      <div class="qfoot"><span class="verified">verified</span>· arXiv:0706.0126 · classical bound 2</div>
+    </div>
+
+    <div class="qcard">
+      <div class="qtop"><span class="nid">NC-4</span><span class="chip">Fluid dynamics</span></div>
+      <h3>Rayleigh–Bénard, fixed-flux walls</h3>
+      <p class="setup">Both walls no-slip and both imposing fixed heat flux (∂<sub>z</sub>θ = 0). Marginal linear stability of the conduction state.</p>
+      <p class="ask"><span class="q">Main problem</span>Critical Rayleigh number and wavenumber at onset.</p>
+      <div class="ans"><span class="lab">Ra<sub>c</sub> · k<sub>c</sub></span><span class="v tnum">720 · →0</span></div>
+      <div class="qfoot"><span class="verified">verified</span>· arXiv:2312.06030 · checkpoint 1295.8 · 2.55</div>
+    </div>
+
+    <div class="qcard">
+      <div class="qtop"><span class="nid">NC-5</span><span class="chip">Quantum computing</span></div>
+      <h3>Search on joined complete graphs</h3>
+      <p class="setup">Quantum-walk search on two K<sub>n</sub> joined by a single bridge edge, marked vertex away from the bridge, uniform initial state.</p>
+      <p class="ask"><span class="q">Main problem</span>Optimal runtime T(n) and success probability P.</p>
+      <div class="ans"><span class="lab">T · P</span><span class="v tnum">π√n/2 · ½</span></div>
+      <div class="qfoot"><span class="verified">verified</span>· arXiv:1409.5876 · checkpoint Grover → (π/2)√N · 1</div>
+    </div>
+
+    <div class="qcard">
+      <div class="qtop"><span class="nid">NC-6</span><span class="chip">AMO · Metrology</span></div>
+      <h3>One-axis-twisting spin squeezing</h3>
+      <p class="setup">N atoms in a coherent spin state under H = χJ<sub>z</sub>²; Wineland parameter ξ² = N(ΔJ<sub>⊥,min</sub>)²/|⟨J⟩|².</p>
+      <p class="ask"><span class="q">Main problem</span>Minimum ξ²<sub>min</sub> over twisting time for N = 100.</p>
+      <div class="ans"><span class="lab">ξ²<sub>min</sub></span><span class="v tnum">0.063</span></div>
+      <div class="qfoot"><span class="verified">verified</span>· arXiv:1011.2978 · −12.0 dB · ~N<sup>−2/3</sup></div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="padding:0">
+    <h3>Reproduce</h3>
+    <pre>cd critpt_repro/repro
+python3 repro_61_quantum_search.py     <span style="color:#66748f"># T=801, P=0.98   (~15 s)</span>
+python3 repro_31_rayleigh_benard.py    <span style="color:#66748f"># Ra_c=816.7, k_c=2.21 + solver validation</span>
+python3 repro_17_syk_entropy.py        <span style="color:#66748f"># S/N=0.2324 (closed form) + finite-N ED</span>
+python3 verify_new_questions.py        <span style="color:#66748f"># all six NC answers</span></pre>
+    <p class="note">All answers derived independently — the public CritPt set holds its reference answers out. Source papers in <code>papers/</code> (27 arXiv PDFs); challenge JSONs in <code>new_challenges/</code> match the CritPt schema. Built from <code>docs/subfield_paper_analysis.md</code>.</p>
+  </div>
+</footer>
+</div>

@@ -1,0 +1,35 @@
+{
+  "dataset_name": "NewChallenge_1_SYK_q6",
+  "source_notebook": "new_challenges/NewChallenge_1_SYK_q6.ipynb",
+  "problems": [
+    {
+      "problem_id": "NewChallenge_1_SYK_q6_main",
+      "problem_type": "main",
+      "problem_index": null,
+      "problem_description": "\n# Problem setup:\nConsider a Majorana Sachdev-Ye-Kitaev model with a SIX-body random interaction, $H=\\sum_{i_1<\\dots<i_6} J_{i_1\\dots i_6}\\,\\chi_{i_1}\\cdots\\chi_{i_6}$, with Majorana fermions $\\{\\chi_a,\\chi_b\\}=\\delta_{ab}$ and Gaussian couplings whose variance scales so that the model has a good large-$N$ limit ($\\langle J^2\\rangle \\propto J^2/N^5$). Work in the large-$N$ limit and define the zero-temperature entropy density $S_0/N$ via the low-temperature expansion $\\log Z=-\\beta E_0+S_0+\\tfrac{c}{2\\beta}+\\cdots$.\n\n# Main problem:\nCalculate the numerical value of $S_0/N$ for $q=6$ to four decimal places.\n",
+      "code_template": "import mpmath as mp\n\ndef answer():\n    r\"\"\"Return S0/N for the q=6 Majorana SYK model (float, 4 dp).\"\"\"\n    # ------------------ FILL IN YOUR RESULTS BELOW ------------------\n    S_per_N = ...\n    # ---------------------------------------------------------------\n    return S_per_N\n",
+      "answer_code": "import mpmath as mp\n\ndef answer():\n    r\"\"\"Return S0/N for the q=6 Majorana SYK model (float, 4 dp).\"\"\"\n    # ------------------ FILL IN YOUR RESULTS BELOW ------------------\n    S_per_N = 0.2908   # reference (verified)\n    # ---------------------------------------------------------------\n    return S_per_N\n",
+      "answer_only_code": "0.2908",
+      "testcases": null,
+      "metadata": {
+        "settings": {},
+        "tag": "High Energy Physics; Condensed Matter",
+        "problem_setup": "Consider a Majorana Sachdev-Ye-Kitaev model with a SIX-body random interaction, $H=\\sum_{i_1<\\dots<i_6} J_{i_1\\dots i_6}\\,\\chi_{i_1}\\cdots\\chi_{i_6}$, with Majorana fermions $\\{\\chi_a,\\chi_b\\}=\\delta_{ab}$ and Gaussian couplings whose variance scales so that the model has a good large-$N$ limit ($\\langle J^2\\rangle \\propto J^2/N^5$). Work in the large-$N$ limit and define the zero-temperature entropy density $S_0/N$ via the low-temperature expansion $\\log Z=-\\beta E_0+S_0+\\tfrac{c}{2\\beta}+\\cdots$."
+      }
+    },
+    {
+      "problem_id": "NewChallenge_1_SYK_q6_q8",
+      "problem_type": "checkpoint",
+      "problem_index": 0,
+      "problem_description": "\n# Checkpoint: repeat for an EIGHT-body interaction ($q=8$).\n",
+      "code_template": "def answer_q8():\n    S_per_N = ...\n    return S_per_N\n",
+      "answer_code": "def answer_q8():\n    S_per_N = 0.3136\n    return S_per_N\n",
+      "answer_only_code": "0.3136",
+      "testcases": null,
+      "metadata": {
+        "settings": {},
+        "tag": "High Energy Physics; Condensed Matter"
+      }
+    }
+  ]
+}
