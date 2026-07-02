@@ -80,6 +80,8 @@ every arXiv ID so they can be re-downloaded.
 ## Reproduce
 
 ```bash
+pip install -r requirements.txt        # numpy, scipy, mpmath
+
 cd critpt_repro/repro
 python3 repro_61_quantum_search.py     # T=801, P=0.98                (~15 s)
 python3 repro_31_rayleigh_benard.py    # Ra_c=816.7, k_c=2.21 + solver validation
@@ -91,7 +93,14 @@ python3 make_new_challenges.py         # regenerate new_challenges/*.json
 #   arXiv IDs are in critpt_repro/papers/manifest.csv
 ```
 
-Requires Python 3 with `numpy`, `scipy`, `mpmath`.
+Requires Python 3 with `numpy`, `scipy`, `mpmath` (see [`requirements.txt`](requirements.txt)).
+
+## Roadmap & license
+
+Next steps — an automated grader, a second batch of reproductions, CI, and upstream
+contribution — are in [`ROADMAP.md`](ROADMAP.md). Released under the
+[MIT License](LICENSE) (covers this repo's own code and documentation; the referenced papers
+remain under their publishers' terms and are not redistributed here).
 
 ## References
 
